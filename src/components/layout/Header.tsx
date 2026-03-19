@@ -6,7 +6,7 @@ import { cartStore } from "@/data/cartStore";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "About Us", to: "/contact" },
+  { label: "About Us", to: "/about" },
   { label: "Return Policy", to: "/shop" },
   { label: "Terms & Conditions", to: "/shop" },
   { label: "Shipping & Returns", to: "/shop" },

@@ -3,7 +3,7 @@ import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "luci
 
 const footerLinks = {
   navigate: [
-    { label: "About Us", to: "/contact" },
+    { label: "About Us", to: "/about" },
     { label: "Return Policy", to: "/shop" },
     { label: "Terms & Conditions", to: "/shop" },
     { label: "Shipping & Returns", to: "/shop" },

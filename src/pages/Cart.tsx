@@ -32,9 +32,9 @@ export default function Cart() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
-              className="glass-card rounded-xl p-4 flex gap-4"
+              className="glass-card flex flex-col gap-4 rounded-xl p-4 sm:flex-row"
             >
-              <Link to={`/product/${item.product.id}`} className="w-24 h-24 flex-shrink-0 bg-secondary/30 rounded-lg overflow-hidden">
+              <Link to={`/product/${item.product.id}`} className="h-24 w-full flex-shrink-0 overflow-hidden rounded-lg bg-secondary/30 sm:w-24">
                 <img src={item.product.image} alt={item.product.name} className="w-full h-full object-contain p-2" />
               </Link>
               <div className="flex-1 min-w-0">
@@ -44,7 +44,7 @@ export default function Cart() {
                 <p className="text-sm text-muted-foreground">{item.product.category}</p>
                 <p className="font-heading font-bold text-foreground mt-1">${item.product.price.toFixed(2)}</p>
               </div>
-              <div className="flex flex-col items-end justify-between">
+              <div className="flex items-center justify-between gap-4 sm:flex-col sm:items-end">
                 <button onClick={() => cartStore.removeFromCart(item.product.id)} className="text-muted-foreground hover:text-destructive transition-colors">
                   <Trash2 size={16} />
                 </button>
@@ -59,7 +59,7 @@ export default function Cart() {
         </div>
 
         {/* Summary */}
-        <div className="glass-card rounded-xl p-6 h-fit sticky top-28">
+        <div className="glass-card h-fit rounded-xl p-6 lg:sticky lg:top-28">
           <h2 className="font-heading font-bold text-foreground text-lg mb-6">Order Summary</h2>
           <div className="space-y-3 text-sm">
             <div className="flex justify-between text-muted-foreground">
