@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Search, Phone, User, Heart, ShoppingCart, Menu, X } from "lucide-react";
+import { Search, Phone, User, Heart, ShoppingCart, Menu, X, LayoutDashboard } from "lucide-react";
 import { useSyncExternalStore } from "react";
 import { cartStore } from "@/data/cartStore";
 import { motion, AnimatePresence } from "framer-motion";
@@ -34,7 +34,6 @@ export default function Header() {
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "shadow-lg bg-background/95 backdrop-blur-md" : "bg-background"}`}>
-      {/* Top bar */}
       <div className="bg-surface-dark text-surface-dark-foreground">
         <div className="container-custom flex items-center justify-between py-2 text-xs">
           <span>Get up to 25% cashback on first order</span>
@@ -45,7 +44,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main header */}
       <div className="container-custom flex items-center justify-between py-4 gap-4">
         <Link to="/" className="flex-shrink-0">
           <h1 className="text-2xl font-heading font-bold">
@@ -72,6 +70,14 @@ export default function Header() {
             <Phone size={16} className="text-primary" />
             <span>(00) 1234 567891</span>
           </div>
+          <Link
+            to="/dashboard"
+            className="p-2 rounded-lg hover:bg-secondary transition-colors relative"
+            aria-label="Open dashboard"
+            title="Dashboard"
+          >
+            <LayoutDashboard size={22} className="text-primary" />
+          </Link>
           <button className="p-2 rounded-lg hover:bg-secondary transition-colors">
             <User size={22} className="text-foreground" />
           </button>
@@ -92,7 +98,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Nav bar */}
       <nav className="border-t border-border bg-background">
         <div className="container-custom hidden md:flex items-center gap-0">
           <div className="relative" onMouseEnter={() => setCatOpen(true)} onMouseLeave={() => setCatOpen(false)}>
@@ -128,7 +133,6 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile nav */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -142,6 +146,9 @@ export default function Header() {
                 <input type="text" placeholder="Search..." className="w-full pl-4 pr-10 py-2 rounded-lg border border-border bg-secondary/50 text-sm" />
                 <Search size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
               </div>
+              <Link to="/dashboard" onClick={() => setMobileOpen(false)} className="block px-3 py-2 rounded-md text-sm hover:bg-secondary transition-colors text-primary font-medium">
+                Dashboard
+              </Link>
               {navLinks.map((link) => (
                 <Link key={link.label} to={link.to} onClick={() => setMobileOpen(false)} className="block px-3 py-2 rounded-md text-sm hover:bg-secondary transition-colors">
                   {link.label}

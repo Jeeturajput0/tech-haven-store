@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 import Layout from "@/components/layout/Layout";
+import AdminLayout from "@/admin/layout/AdminLayout";
 import Index from "./pages/Index";
 import Shop from "./pages/Shop";
 import ProductDetails from "./pages/ProductDetails";
@@ -13,6 +14,16 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import DashboardHome from "@/admin/pages/DashboardHome";
+import ProductsPage from "@/admin/pages/ProductsPage";
+import CategoriesPage from "@/admin/pages/CategoriesPage";
+import OrdersPage from "@/admin/pages/OrdersPage";
+import CustomersPage from "@/admin/pages/CustomersPage";
+import ReviewsPage from "@/admin/pages/ReviewsPage";
+import BlogAdminPage from "@/admin/pages/BlogAdminPage";
+import CouponsPage from "@/admin/pages/CouponsPage";
+import MessagesPage from "@/admin/pages/MessagesPage";
+import SettingsPage from "@/admin/pages/SettingsPage";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +43,18 @@ const App = () => (
               <Route path="/blog" element={<Blog />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+            </Route>
+            <Route path="/dashboard" element={<AdminLayout />}>
+              <Route index element={<DashboardHome />} />
+              <Route path="products" element={<ProductsPage />} />
+              <Route path="categories" element={<CategoriesPage />} />
+              <Route path="orders" element={<OrdersPage />} />
+              <Route path="customers" element={<CustomersPage />} />
+              <Route path="reviews" element={<ReviewsPage />} />
+              <Route path="blog" element={<BlogAdminPage />} />
+              <Route path="coupons" element={<CouponsPage />} />
+              <Route path="messages" element={<MessagesPage />} />
+              <Route path="settings" element={<SettingsPage />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
