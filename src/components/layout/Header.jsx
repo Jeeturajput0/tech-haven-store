@@ -1,15 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { Link } from "react-router-dom";
 import { Search, Phone, User, Heart, ShoppingCart, Menu, X, LayoutDashboard } from "lucide-react";
-import { useSyncExternalStore } from "react";
 import { cartStore } from "@/data/cartStore";
 import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
     { label: "About Us", to: "/about" },
     { label: "Return Policy", to: "/shop" },
-    { label: "Terms & Conditions", to: "/shop" },
     { label: "Shipping & Returns", to: "/shop" },
-    { label: "Contact Us", to: "/contact" },
     { label: "Blog", to: "/blog" },
 ];
 const categoryLinks = [
