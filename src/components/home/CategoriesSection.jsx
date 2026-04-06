@@ -18,7 +18,8 @@ export default function CategoriesSection() {
                 <Link to="/shop" className="group glass-card-hover rounded-xl p-6 flex flex-col items-center text-center">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                     <Icon size={28} className="text-primary group-hover:text-primary-foreground transition-colors"/>
-                  </div>
+                
+                   </div>
                   <h3 className="font-heading font-semibold text-sm text-foreground">{cat.name}</h3>
                   <p className="text-xs text-muted-foreground mt-1">{cat.count} Products</p>
                 </Link>
