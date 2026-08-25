@@ -108,7 +108,7 @@
     background-image: var(--gradient-primary);
   }
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-2 md:py-6;
   }
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
